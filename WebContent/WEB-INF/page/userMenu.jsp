@@ -2,10 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-request.setAttribute("path", basePath);
-%>
+<html>
+<head>
 <style type="text/css">
 .clear{
 clear:both;
@@ -13,9 +11,9 @@ clear:both;
 .dierhang{
 margin-top:20px;
 float:left;
-border:1px solid gray;
+
 width:100%;
-height: 300px;
+height: 200px;
 }
 .dierhang{
 
@@ -33,7 +31,7 @@ margin-left: 100px;
 	align-content: center;
 }
 .div_table1{
-float:left;
+	float:left;
 	width: 100%;
 	height: 300px;
 	margin: 20px auto;
@@ -43,26 +41,24 @@ font-size:20px;
 background-color: gray;
 }
 .table1 td{
-text-align:center;
+	text-align:center;
 	border:1px solid gray;
 }
 .div_table2{
-float:left;
+	float:left;
 	width: 100%;
 	height: 300px;
 }
 .table2 th{
-font-size:20px;
-background-color: gray;
+	font-size:20px;
+	background-color: gray;
 }
 .table2 td{
-text-align:center;
+	text-align:center;
 	border:1px solid gray;
 }
 
 </style>
-<html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/menuStyle.css" rel='stylesheet' type='text/css' />
 <title>User Menu</title>
@@ -73,7 +69,7 @@ text-align:center;
 		
 		
 		<div class="daohang">
-			<a href="">我的文档</a>
+			<a href="AllDocument">我的文档</a>
 		</div>
 		<div class="daohang">
 			<a href="findAll_Friend">我的好友</a>
@@ -83,6 +79,9 @@ text-align:center;
 		</div>
 		<div class="daohang">
 			<a href="skipUserReach">添加好友</a>
+		</div>
+		<div class="daohang">
+			<a href="skipuserUpdate">修改个人信息</a>
 		</div>
 		
 		
@@ -119,50 +118,25 @@ text-align:center;
 					<tr>
 						<td>${doc.fTitle }</td>
 						<td>${doc.fType }</td>
-						<td>${doc.fCatelog }</td>
+						<td>
+							<c:forEach var="item2" items="${Cateloglist }">
+								<c:if test="${doc.fCatelog==item2.fid }">
+									${item2.fCatelog}
+								</c:if>
+							</c:forEach >
+						</td>
 						<td>${doc.fUploadTime }</td>
 						<td>${doc.fDownloadCount }</td>
 						<td>${doc.fGoodCount }</td>
-					
 					</tr>
-					</c:forEach>
-					
+				</c:forEach>
 				</table>
-			
 		</div>
 		
-		<div class="div_table2">
-				
-				<table class="table2" >
-					<tr class="table2_th">
-						<th colspan="10">我的文档</th>
-					</tr>
-					<tr class="table2_td">
-						<td>标题</td>
-						<td>类型</td>
-						<td>分类</td>
-						<td>上传时间</td>
-						<td>下载次数</td>
-						<td>点赞次数</td>	
-					</tr>
-					<c:forEach items="${mydoc }" var="doc">
-					<tr>
-						<td>${doc.ftitle }</td>
-						<td>${doc.ftype }</td>
-						<td>${doc.fcatelog }</td>
-						<td>${doc.fuploadTime }</td>
-						<td>${doc.fdownloadCount }</td>
-						<td>${doc.fgoodCount }</td>
-					
-					</tr>
-					</c:forEach>
-					
-				</table>
-			
 		</div>
 			</div>
 			<div class="clear"></div>
 			
-		</div>
+		
 </body>
 </html>

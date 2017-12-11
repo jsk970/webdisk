@@ -35,10 +35,10 @@ public class ICatelogServiceImpl implements ICatelogService {
 	}
 
 	@Override
-	public List<Catelog> finCatelogAll() {
+	public List<Catelog> findCatelogAll(String fTel) {
 		// TODO Auto-generated method stub
-		if(dao.findCatelogAll()!=null)
-			return dao.findCatelogAll();
+		if(dao.findCatelogAll(fTel)!=null)
+			return dao.findCatelogAll(fTel);
 		return null;
 	}
 

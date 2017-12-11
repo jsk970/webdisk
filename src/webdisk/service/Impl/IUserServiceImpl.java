@@ -2,6 +2,8 @@ package webdisk.service.Impl;
 
 
 
+import java.util.List;
+
 import webdisk.bean.User;
 import webdisk.dao.IUserDao;
 import webdisk.factory.DaoFactory;
@@ -45,23 +47,31 @@ public class IUserServiceImpl implements IUserService {
 	@Override
 	public void setLevel(String fTel) {
 		// TODO Auto-generated method stub
-		String level="1级";
+		String level="1";
 		
 		int scouse = 0;
 		if(scouse >=0 && scouse<100)
-			level="1级";
+			level="1";
 		else if(scouse <200)
-			level="2级";
+			level="2";
 		else if(scouse <200)
-			level="3级";
+			level="3";
 		else if(scouse <200)
-			level="4级";
+			level="4";
 		else if(scouse <200)
-			level="5级";
+			level="5";
 		else
-			level="1级";
+			level="1";
 			
 
+	}
+
+	@Override
+	public List<User> findAll() {
+		// TODO Auto-generated method stub
+		if(dao.findAll()!=null)
+			return dao.findAll();
+		return null;
 	}
 
 }

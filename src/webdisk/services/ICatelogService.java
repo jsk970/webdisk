@@ -28,6 +28,6 @@ public interface ICatelogService {
 	 * 查看分类
 	 * @return 返回List list
 	 */
-	public List<Catelog> finCatelogAll();
+	public List<Catelog> findCatelogAll(String fTel);
 
 }

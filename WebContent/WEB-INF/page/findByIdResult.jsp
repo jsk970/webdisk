@@ -14,6 +14,9 @@ request.setAttribute("path", basePath);
 <body>
 <div class="main">
 		<div class="login-form">
+		
+		
+			
 		<form action="add_Friend?fTel=${findFriend.fTel }" method="post">
 			<table border="1" class="ResultTable">
 			<tr>

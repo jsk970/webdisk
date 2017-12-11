@@ -17,13 +17,32 @@ request.setAttribute("path", basePath);
 <body>
 <div class="main">
 		<div class="login-form">
+					<div class="daohang">
+					<a href="AllDocument">我的文档</a>
+					</div>
+					<div class="daohang">
+						<a href="findAll_Friend">我的好友</a>
+					</div>
+					<div class="daohang">
+						<a href="SkipUpload">上传文件</a>
+					</div>
+					<div class="daohang">
+						<a href="skipUserReach">添加好友</a>
+					</div>
+					<div class="daohang">
+						<a href="skipuserUpdate">修改个人信息</a>
+					</div>
+			
+		
+		
 			<table border="1" class="ResultTable">
 			<tr>
 				
 				<th>fTitle</th>
 				<th>fType</th>
 				<th>fUploadTime</th>
-				<th>fMemo</th>
+				<th>fSize</th>
+				<td>fCatelog</td>
 				<th>操作</th>
 			</tr>
 			<c:forEach var="item" items="${DocumentList}">
@@ -32,9 +51,16 @@ request.setAttribute("path", basePath);
 				<td>${item.fTitle }</td>
 				<td>${item.fType }</td>
 				<td>${item.fUploadTime }</td>
-				<td>${item.fMemo }</td>
-				<td><input type="button" value="删除" onclick="location='deleteuploadfile?fid=${item.fid }&filename=${item.fTitle}'">
-				<input type="button" value="修改" onclick="location=''">
+				<td>${item.fSize }KB</td>
+				<td>
+				<c:forEach var="item2" items="${Cateloglist }">
+					<c:if test="${item.fCatelog==item2.fid }">
+					${item2.fCatelog}
+					</c:if>
+				</c:forEach ></td>
+				<td>
+				<input type="button" value="删除" onclick="location='delete_Document?fid=${item.fid }&filename=${item.fTitle}&deletefile=${item}'">
+				
 				<input type="button" value="下载" onclick="location='downloadfile?filename=${item.fTitle }'">
 				</td>
 			</tr>

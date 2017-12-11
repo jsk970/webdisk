@@ -15,7 +15,7 @@ public interface ICatelogDao {
 	 * 查询所有分类列表
 	 * @return
 	 */
-	public List<Catelog> findCatelogAll();
+	public List<Catelog> findCatelogAll(String fTel);
 	/**
 	 * 删除分类
 	 * @param fTel

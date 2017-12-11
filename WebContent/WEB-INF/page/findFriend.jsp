@@ -9,6 +9,7 @@ request.setAttribute("path", basePath);
 
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>好友</title>
 <link href="css/findByIdResultStyle.css" rel='stylesheet' type='text/css' />
@@ -17,8 +18,8 @@ request.setAttribute("path", basePath);
 
 <div class="main">
 		<div class="login-form">
-		
-			<table border="1" class="ResultTable">
+				
+			<table class="table" border="1" class="ResultTable">
 			<tr>
 				
 				<th>fFriendTel</th>

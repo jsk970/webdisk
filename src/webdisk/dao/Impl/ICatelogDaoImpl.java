@@ -35,12 +35,12 @@ public class ICatelogDaoImpl implements ICatelogDao {
 	}
 
 	@Override
-	public List<Catelog> findCatelogAll() {
+	public List<Catelog> findCatelogAll(String fTel) {
 		// TODO Auto-generated method stub
-		String sql= "SELECT * FROM t_catelog";
+		String sql= "SELECT * FROM t_catelog where fTel=?";
 		List<Catelog> list = null;
 		try {
-			list = qr.query(sql, new BeanListHandler<Catelog>(Catelog.class));
+			list = qr.query(sql, new BeanListHandler<Catelog>(Catelog.class),fTel);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

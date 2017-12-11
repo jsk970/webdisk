@@ -113,7 +113,7 @@ public class IUserDaoImpl implements IUserDao {
 		int result = 0;
 		String password = Md5Token.getInstance().getLongLongToken(user.getfPassword());
 		Object[] params = {password,user.getfUser(),user.getfLevel(),user.getfPhoto(),
-				user.getfScore(),user.getfIntroduction(),user.getfRegist()};
+				user.getfScore(),user.getfIntroduction(),user.getfRegist(),fTel};
 		try {
 			result = qr.update(sql,params);
 		} catch (SQLException e) {

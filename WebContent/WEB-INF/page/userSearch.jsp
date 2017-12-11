@@ -24,7 +24,23 @@ function check(){
 </head>
 <body>
  <div class="main">
+ <div class="daohang">
+					<a href="AllDocument">我的文档</a>
+				</div>
+				<div class="daohang">
+					<a href="findAll_Friend">我的好友</a>
+				</div>
+				<div class="daohang">
+					<a href="SkipUpload">上传文件</a>
+				</div>
+				<div class="daohang">
+					<a href="skipUserReach">添加好友</a>
+				</div>
+				<div class="daohang">
+					<a href="skipuserUpdate">修改个人信息</a>
+				</div>
 		<div class="login-form">
+				
 			<form action="findById" name="Searchform" method="post" onsubmit="return check()">
 				SEARCH USER：<input type="text" name='fTel' placeholder="fTel">
 					<div class="submit">

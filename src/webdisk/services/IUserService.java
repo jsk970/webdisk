@@ -1,5 +1,7 @@
 package webdisk.services;
 
+import java.util.List;
+
 import webdisk.bean.User;
 
 public interface IUserService {
@@ -35,5 +37,10 @@ public interface IUserService {
 	 * 
 	 */
 	public void setLevel(String fTel);
+	/**
+	 * 查询所有用户的信息
+	 * @return 返回用户的集合list
+	 */
+	public List<User> findAll();
 
 }

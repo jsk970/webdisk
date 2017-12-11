@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="skipLogin" >登录</a>
-<a href="skipRegist">注册</a>
+该手机号已被注册！
 </body>
 </html>

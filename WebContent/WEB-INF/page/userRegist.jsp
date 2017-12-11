@@ -7,7 +7,7 @@
 <link href="css/registStyle.css" rel='stylesheet' type='text/css' />
 
 
-<script type="text/javascript" src="../js/regist.js">
+<script type="text/javascript" src="js/regist.js">
 	
 </script>
 <title>Regist User</title>
@@ -17,7 +17,7 @@
 		<div class="login-form">
 			<h1>Member Regist</h1>
 					<div class="head">
-						<img src="../image/user.png" alt=""/>
+						<img src="image/user.png" alt=""/>
 					</div>
 				<form action="Regist" name="registform" method="post" enctype="multipart/form-data" onsubmit="return check()">
 						FTEL：<input type="text" id="fTel" class="text" name="fTel" placeholder="Phone number" ><br/>
@@ -25,9 +25,9 @@
 						PASSWORD AGAIN:<input type="password" name="fPwd" placeholder="Confirmation password" ><br/>
 						NAME:<input type="text" name="fUser" placeholder="Username"><br/>
 						HEAD SCULPTURE:<input type="file" name="fphoto" value="选择文件"><br/>
-						INTRODUCE:<br/><textarea  name="fintroduction" placeholder="Please introduce yourself..."></textarea>
+						INTRODUCE:<br/><textarea  name="fIntroduction" placeholder="Please introduce yourself..."></textarea>
 						<div class="submit">
-							<input type="submit"  value="REGIST" >
+							<input type="submit"  value="REGIST" onclick="return check()">
 							<input type="reset"  value="RESET">
 							<a href="skipLogin">已有用户，直接登录！</a>
 					</div>	
